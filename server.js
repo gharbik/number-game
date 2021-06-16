@@ -4,7 +4,7 @@ const db = require('./config/database');
 const cors = require('cors');
 const bodyparser = require('body-parser');
 var app = express();
-app.use(cors()) 
+app.use(cors()); 
 app.use(express.json());
 const joueurrouter = require('./routes/routerjoueur');
 const WebSockets = require('./websocket');
@@ -29,10 +29,10 @@ var server = require('http').createServer(app);
 global.io = require('socket.io')(server);
 global.io.on('connection', WebSockets.connection);
 
-
-server.listen(3200, function(err) {
+let port = process.env.PORT || 3200;
+server.listen(port, function(err) {
     if(err) 
     console.log('erreur', err);
     else
-    console.log('Server is running at http://localhost:3200');
+    console.log(`Server is running on port ${port}!`);
 });
