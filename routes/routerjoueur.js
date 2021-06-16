@@ -1,5 +1,5 @@
 'use strict';
-const joueurController = require('../controllers/joueurController');
+const joueurController = require('../controllers/joueurcontroller');
 const route = require('express').Router();
 
 route.get('/all',joueurController.GetALLJoueur);
