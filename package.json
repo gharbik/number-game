@@ -2,7 +2,7 @@
   "name": "projetgame",
   "version": "1.0.0",
   "description": "",
-  "main": "inscription.html",
+  "main": "server.js",
   "engines": {
     "node": "16.x",
     "npm": "7.x"
