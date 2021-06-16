@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Trouvez le bon numéro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style.css" media="screen">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+  </head>
+
+  <body>
+    <section class="column-container">
+      <div class="left-column">
+
+        <!--- Jouer -->
+        <section class="num-column">
+          <h2>Devinez un numéro entre <strong value="10">10</strong> et <strong value="15">15</strong> </h2>
+            <div id="joueur_name"> </div>
+              <h4>
+                <label class="playerGuess" for="numGuess">Numéro</label><br>
+                <input type="number" id="numGuess" class="inputField" required placeholder="Numéro proposé">
+              </h4>
+
+              <h4><button type="button" onclick="sendData();">Jouer</button></h4>
+        </section>
+
+      <!--- Scores joueurs connectés -->
+        <div>
+          <h2>Scores des joueurs connectés</h2>
+          <section id="list_joueur_current" class="score-column">    
+          </section>
+        </div>
+      </div>
+
+      <!-- Resultat gagnant -->
+      <div class="right-column" id="show_result">
+        <aside>
+        </aside>
+        <div id="resultsDiv">  
+        </div>
+        <p id="resultsP">
+        </p>
+        <br>
+      </div>
+    </section>
+    
+    <!--- Score -->
+    <div>
+      <h2>Score global</h2>
+      <section id="list_joueur" class="score-column"></section>
+    </div>
+
+  </body>
+  <script src="js/main.js"></script>
+</html>
