@@ -10,6 +10,7 @@ const joueurrouter = require('./routes/routerjoueur');
 const WebSockets = require('./websocket');
 app.use('/joueurs', joueurrouter);
 
+
 app.get('/', (req,res) => {
     res.sendFile(__dirname + '/public/inscription.html')
 });
@@ -22,6 +23,7 @@ app.get('/play', (req,res) => {
 app.use('/css',express.static(__dirname + '/public/css'));
 app.use('/js',express.static(__dirname + '/public/js'));
 app.use('/img',express.static(__dirname + '/public/img'));
+
 
 app.use(bodyparser.urlencoded({extended:true})); // pour lire les formats json
 var server = require('http').createServer(app);
